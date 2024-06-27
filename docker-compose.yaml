@@ -1,0 +1,8 @@
+services:
+  angular-app:
+    build: ./_docker
+    container_name: angular-app
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./:/angular-app
