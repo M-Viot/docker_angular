@@ -57,16 +57,16 @@ function help() {
         { lastLine = $0 }' $0
 }
 function new() {
-    docker run --rm --interactive --tty  --volume $PWD:/angular-app docker_env-angular-app ng new "$PARM1" --routing --standalone --strict --style=scss
+    docker run --rm --interactive --tty  --volume $PWD:/angular-app angular-app ng new "$PARM1" --routing --standalone --strict --style=scss
     mv "$PARM1"/* .
     rm -rf "$PARM1"
-    docker run --rm --interactive --tty  --volume $PWD:/angular-app docker_env-angular-app ng serve --host 0.0.0.0 --port 4200
+    docker run --rm --interactive --tty  --volume $PWD:/angular-app angular-app ng serve --host 0.0.0.0 --port 4200
 }
 function serve() {
-    docker run --rm --interactive --tty  --volume $PWD:/angular-app docker_env-angular-app ng serve --host 0.0.0.0 --port 4200
+    docker run --rm --interactive --tty  --volume $PWD:/angular-app angular-app ng serve --host 0.0.0.0 --port 4200
 }
 function build() {
-      docker run --rm --interactive --tty  --volume $PWD:/angular-app docker_env-angular-app ng build --configuration="$PARM1"
+      docker run --rm --interactive --tty  --volume $PWD:/angular-app angular-app ng build --configuration="$PARM1"
 }
 $COMMAND
 
