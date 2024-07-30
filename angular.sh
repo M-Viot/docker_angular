@@ -58,8 +58,7 @@ function help() {
 }
 function new() {
     docker run --rm --interactive --tty  --volume $PWD:/angular-app angular-app ng new "$PARM1" --routing --standalone --strict --style=scss
-    sudo mv "$PARM1"/* .
-    sudo rm -rf "$PARM1"
+    cd "$PARM1"
     docker run --rm --interactive --tty  --volume $PWD:/angular-app angular-app ng serve --host 0.0.0.0 --port 4200
 }
 function serve() {
